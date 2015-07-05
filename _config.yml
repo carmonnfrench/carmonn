@@ -1,0 +1,13 @@
+# Site settings
+title: Carmonn French | Artist
+email: carmonn@carmonnfrench.com
+description: > # this means to ignore newlines until "baseurl:"
+  This is the portfolio page of artist Carmonn French.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://localhost:4000/" # the base hostname & protocol for your site
+
+
+
+# Build settings
+markdown: kramdown
+permalink: pretty

@@ -1,0 +1,72 @@
+.paintings {
+  img {
+    opacity: 0;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+
+// Loading overlay
+
+.gallery {
+  overflow: hidden;
+  max-width: 740px;
+}
+
+
+// Single image overlay
+
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  display: none;
+  text-align: center;
+  transition: all 0.5 ease-in;
+
+}
+
+// Styles for art and text
+
+.art-all {
+  height: 100vh;
+  width: 100vw;
+  img {
+    max-height: 60%;
+    max-width: 90%;
+    padding-top: 5%;
+  }
+  .art-text {
+    height: 40%;
+    padding-top: 20px;
+    .art-title {
+      text-align: center;
+      color: #eee;
+      margin-top: 10px;
+    }
+    .art-size {
+      color: #eee;
+    }
+    .art-type {
+      color: #eee;
+    }
+    .art-description {
+      text-align: center;
+      color: #eee;
+      margin-top: 10px;
+    }
+  }
+}
+
+
+
+
+
+.post-title {
+  color: #eee;
+}
