@@ -1,14 +1,23 @@
+var windowHeight = function() {
+    return $(window).height();
+};
 
-$(".home").height(pageContentHeight());
+var includesHeight = function() {
+    return $("header").height() + $("footer").height();
+}
 
-var frontPageImageWidth = $(".home").width();
+var pageContentHeight = function() {
+  // Return a height value equal to the window height minus header and footer
+  return windowHeight() - includesHeight();
+};
 
-var frontPageImageHeight = function() {
+
+$(".home").height(pageContentHeight() - includesHeight() );
+
+var homeHeight = function() {
     return $(".home").height();
 };
 
-// Make circle width relative to parent width
-$(".container").width(frontPageImageWidth / 1.2);
 
 // Define circle width
 var circleWidth = function() {
@@ -24,20 +33,25 @@ var circleHeight = function() {
 };
 
 // Calculate top padding
-var $padding = function() {
-  return (frontPageImageHeight() - circleHeight()) / 2 ;
+var $doublePadding = function() {
+  return (homeHeight() - circleHeight());
 }
 
+var $padding = function() {
+  return $doublePadding() * 0.5;
+};
+
 // Set padding top
-$(".home").css("padding-top", $padding() );
+$(".container").css("margin-top", $padding() );
 
 // Make sign heightand width equal container
 $(".sign").height(circleHeight());
 $(".sign").width(circleWidth());
 
-// Vertical align sign
-var $signPadding = function () {
-  return circleHeight() - $(".sign").height();
-};
 
-$(".container").css("padding-top", $signPadding() );
+// // Remove padding px from home height px
+// var homeHeightMinusPadding = function() {
+//   return homeHeight() - $padding();
+// }
+//
+// $('.home').height(homeHeightMinusPadding());
