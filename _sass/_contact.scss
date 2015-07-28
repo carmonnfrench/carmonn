@@ -18,22 +18,17 @@ form {
 
 input[placeholder*="Your"] {
   margin-bottom: 8px;
-  border: 1px solid #000;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
   padding: 5px;
-  box-shadow: inset 0 2px 2px rgba(0,0,0, .5);
+  width: 100%;
+  border: 2px solid #fff;
 }
 
 textarea {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
   padding: 5px;
   margin-top: 2px;
   margin-bottom: 5px;
-  box-shadow: inset 0 2px 2px rgba(0,0,0, .5);
+  width: 100%;
+  border: 2px solid #fff;
 }
 
 input[type=submit] {
@@ -42,10 +37,6 @@ input[type=submit] {
   width: 60px;
   font-size: 16px;
   background-color: #000;
-  border: 1px solid #eee;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  border: 2px solid #eee;
   padding: 6px 8px 8px 8px;
-
 }

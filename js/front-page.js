@@ -7,6 +7,7 @@ var includesHeight = function() {
 }
 
 var pageContentHeight = function() {
+
   // Return a height value equal to the window height minus header and footer
   return windowHeight() - includesHeight();
 };
@@ -19,7 +20,7 @@ var homeHeight = function() {
 };
 
 
-// Define circle width
+// Define circle width equal to container width
 var circleWidth = function() {
     return $(".container").width();
 };
@@ -33,25 +34,43 @@ var circleHeight = function() {
 };
 
 // Calculate top padding
-var $doublePadding = function() {
-  return (homeHeight() - circleHeight());
-}
 
-var $padding = function() {
-  return $doublePadding() * 0.5;
+var margin = function() {
+  var doubleMargin = function() {
+    return (homeHeight() - circleHeight());
+  }
+  return doubleMargin() * 0.5;
 };
 
 // Set padding top
-$(".container").css("margin-top", $padding() );
+$(".container").css("margin-top", margin() / 2);
 
 // Make sign heightand width equal container
 $(".sign").height(circleHeight());
 $(".sign").width(circleWidth());
 
+var adjustedHomeHeight = function() {
+  return homeHeight() - margin();
+}
+$('.home').height(adjustedHomeHeight());
 
-// // Remove padding px from home height px
-// var homeHeightMinusPadding = function() {
-//   return homeHeight() - $padding();
-// }
-//
-// $('.home').height(homeHeightMinusPadding());
+
+
+
+
+
+
+
+
+
+
+
+// Change circle color on mouse movement
+
+$( ".container" ).mousemove(function( event ) {
+  var pageCoords = "( " + ((event.pageX / 3) - 190) + ", " + (event.pageY / 6) + ", " + ((event.pageX + event.pageY) / 6) + " )";
+  var clientCoords = "( " + event.clientX + ", " + event.clientY + " )";
+$(".container").css("background-color", "rgb" + pageCoords );
+});
+
+$(".home").css("max-height", pageContentHeight());

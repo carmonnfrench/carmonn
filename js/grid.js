@@ -4,9 +4,6 @@ $(window).load( function() {
   $(".canvas").jMosaic({margin: 3});
   $(".paper").jMosaic({margin: 3, is_first_big: true});
 
-  // Hide grid images until page is fully loaded
-  $(".paintings").children().css("opacity", "1");
-
   // Define the overlay, and the html elements to be appended to the overlay
   var $overlay            = $("<div id='overlay'></div>");
   var $img                = $("<img>");
@@ -89,3 +86,12 @@ $(window).load( function() {
   window.onorientationchange = function() { window.location.reload(); };
 
 });
+
+$(document).ready(function() {
+  // Hide grid images until page is fully loaded
+  function showImg() {
+    $(".canvas").children().css("opacity", "1");
+    $(".paper").children().css("opacity", "1");
+  }
+  setTimeout(showImg, 700);
+})
