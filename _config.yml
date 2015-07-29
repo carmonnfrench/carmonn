@@ -1,6 +1,8 @@
 # Site settings
 title: Carmonn French | Artist
 email: carmonn@carmonnfrench.com
+instagram_username: carmonnfrench
+facebook_username: carmonnfrenchart
 description: > # this means to ignore newlines until "baseurl:"
   This is the portfolio page of artist Carmonn French.
 baseurl: "" # the subpath of your site, e.g. /blog/

@@ -7,20 +7,25 @@ var includesHeight = function() {
 }
 
 var pageContentHeight = function() {
-
   // Return a height value equal to the window height minus header and footer
   return windowHeight() - includesHeight();
 };
 
-
 $(".home").height(pageContentHeight() - includesHeight() );
 
+// Store adjusted home height in variable
 var homeHeight = function() {
     return $(".home").height();
 };
 
 
-// Define circle width equal to container width
+    // Circle width is defined in CSS
+    // Circle height is set here relative to circle width
+    //
+
+$('.container').css("max-width", (pageContentHeight() - 20));
+
+// Store circle width in variable
 var circleWidth = function() {
     return $(".container").width();
 };
@@ -33,32 +38,14 @@ var circleHeight = function() {
     return $(".container").height();
 };
 
-// Calculate top padding
-
-var margin = function() {
-  var doubleMargin = function() {
-    return (homeHeight() - circleHeight());
-  }
-  return doubleMargin() * 0.5;
-};
-
-// Set padding top
-$(".container").css("margin-top", margin() / 2);
-
-// Make sign heightand width equal container
+// Make sign height and width equal circle
 $(".sign").height(circleHeight());
 $(".sign").width(circleWidth());
 
 var adjustedHomeHeight = function() {
   return homeHeight() - margin();
 }
-$('.home').height(adjustedHomeHeight());
-
-
-
-
-
-
+$('.home').height(pageContentHeight());
 
 
 
@@ -68,9 +55,12 @@ $('.home').height(adjustedHomeHeight());
 // Change circle color on mouse movement
 
 $( ".container" ).mousemove(function( event ) {
-  var pageCoords = "( " + ((event.pageX / 3) - 190) + ", " + (event.pageY / 6) + ", " + ((event.pageX + event.pageY) / 6) + " )";
-  var clientCoords = "( " + event.clientX + ", " + event.clientY + " )";
-$(".container").css("background-color", "rgb" + pageCoords );
+  var r = ((event.pageX / 3) - 190);
+  var g = 10;
+  var b = (event.pageY / 6);
+  var pageCoords = "( " + r + ", " + 10 + ", " + b + " )";
+    console.log(pageCoords);
+  $(".container").css("background-color", "rgb" + pageCoords );
 });
 
 $(".home").css("max-height", pageContentHeight());
