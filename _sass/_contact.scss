@@ -4,17 +4,13 @@ form {
   float: left;
   width: 50%;
   // border: 2px solid pink;
+  @media (min-width: 500px) and (max-width: 900px) {
+    width: 75%;
+  }
+  @media (max-width: 499px) {
+    width: 95%;
+  }
 }
-
-.social-media {
-  display: none;
-  float: left;
-  display: inline-block;
-  width: 44%;
-  height: 200px;
-  // border: 2px solid pink;
-}
-
 
 input[placeholder*="Your"] {
   margin-bottom: 8px;
