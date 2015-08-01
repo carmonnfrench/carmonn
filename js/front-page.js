@@ -58,8 +58,7 @@ $( ".container" ).mousemove(function( event ) {
   var r = ((event.pageX / 3) - 190);
   var g = 10;
   var b = (event.pageY / 6);
-  var pageCoords = "( " + r + ", " + 10 + ", " + b + " )";
-    console.log(pageCoords);
+  var pageCoords = "( " + r + ", " + g + ", " + b + " )";
   $(".container").css("background-color", "rgb" + pageCoords );
 });
 
