@@ -66,15 +66,16 @@
     @media (min-width: 800px) {
       max-width: 50%;
     }
-    @media (max-height: 900px) and (min-width: 800px) {
+    @media (min-width: 800px) {
       margin-left: 5%;
       width: auto;
       float: left;
       @include vertical-align;
     }
     @media (min-width: 1300px) {
-      max-width: 60%;
-      height: 90%;
+      max-width: 50%;
+      height: 80%;
+      float: left;
     }
   }
   .art-text {
@@ -90,13 +91,14 @@
       width: auto;
       font-size: 0.8em;
     }
-    @media (max-height: 900px) and (min-width: 800px) {
+    @media (min-width: 800px) {
       float: right;
       width: 40%;
       @include vertical-align;
     }
     @media (min-width: 1300px) {
       max-width: 30%;
+      margin-right: 10%;
     }
     .art-title {
       background-color: rgba(0, 0, 0, 0.4);
